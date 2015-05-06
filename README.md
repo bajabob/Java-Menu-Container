@@ -1,10 +1,10 @@
-## Java-Menu-Container
+## Java-Menu-Container (JMC)
 
 ![Example Menu](screenshots/menu.gif)
 
 ### About
 
-I got tired of having to write custom console menus for all of my projects. For sake of simplicity I needed a generic menu container capable of traversing numerous levels and was also capable of storing generic data that can be used across the menu. The JMC is a product of these requirements and allows you to easily create a full working menu that will work with any project requirement. The idea here is simple, the menu takes care of storing information and interacting with the user and you implement the rest.
+I got tired of having to write custom console menus for all of my projects. For sake of simplicity I needed a generic menu container capable of traversing numerous levels, was also capable of storing generic data that can be used across the menu, and of course allowed the user it provide a series of inputs. The JMC is a product of these requirements and allows you to easily create a full working menu that will work with any project requirement. The idea here is simple, the menu takes care of storing information and interacting with the user and you implement the rest.
 
 ### How it works
 
