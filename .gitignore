@@ -1,3 +1,7 @@
 *.class
 .DS_Store
 .thumbs
+/bin/
+.classpath
+.project
+.settings/

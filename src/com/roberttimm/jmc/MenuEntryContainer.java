@@ -1,3 +1,4 @@
+package com.roberttimm.jmc;
 import java.util.ArrayList;
 
 
@@ -9,9 +10,17 @@ public class MenuEntryContainer {
 	/** the list of entries for this container */
 	private ArrayList<MenuEntry> entries;
 	
-	public MenuEntryContainer(String label){
+	/** is this the home container? */
+	private boolean isHome;
+	
+	public MenuEntryContainer(String label, boolean isHome){
 		this.label = label;
+		this.isHome = isHome;
 		entries = new ArrayList<MenuEntry>();
+	}
+	
+	public MenuEntryContainer(String label){
+		this(label, false);
 	}
 	
 	/**
@@ -46,7 +55,10 @@ public class MenuEntryContainer {
 		for(MenuEntry me : entries){
 			s += me + "\n";
 		}
-		s += "home\t:Home Menu\n";
+		s += "\n";
+		if(!isHome){
+			s += "home\t:Home Menu\n";
+		}
 		s += "mem\t:Print Memory\n";
 		s += "clear\t:Clear Memory\n";
 		s += "q\t:Exit Program\n";

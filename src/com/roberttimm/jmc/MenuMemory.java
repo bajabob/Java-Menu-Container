@@ -1,3 +1,4 @@
+package com.roberttimm.jmc;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,15 @@ public class MenuMemory {
 	 */
 	public void add(String key, String value){
 		memory.put(key, value);
+	}
+	
+	/**
+	 * Add an entry to memory
+	 * @param key String
+	 * @param value int
+	 */
+	public void add(String key, int value){
+		memory.put(key, value+"");
 	}
 	
 	/**

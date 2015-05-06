@@ -1,3 +1,4 @@
+package com.roberttimm.jmc;
 import java.util.ArrayList;
 
 
@@ -41,6 +42,12 @@ public class MenuEntry {
 			System.err.println("'mem' is a reserved menu selector. Please choose another.");
 		}
 	}
+	
+	
+	public MenuEntry(String labal, String selector){
+		this(labal, selector, null);
+	}
+	
 	
 	/**
 	 * Add input instructions to this entry

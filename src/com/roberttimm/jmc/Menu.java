@@ -1,3 +1,4 @@
+package com.roberttimm.jmc;
 import java.io.BufferedReader;
 import java.io.Console;
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class Menu {
 	private MenuMemory memory;
 	
 	public Menu(String homeLabel){
-		topLevel = new MenuEntryContainer(homeLabel);
+		topLevel = new MenuEntryContainer(homeLabel, true);
 		traversal = topLevel;
 		memory = new MenuMemory();
 	}
@@ -85,6 +86,8 @@ public class Menu {
 			// get the selector the user requested
 			MenuEntry me = traversal.getBySelector(selection);
 			
+			// get some user inputs if there is an executable element
+			//  attached to this menu item
 			if(me != null){
 				if(me.isExecutable()){
 					ArrayList<MenuInput> inputs = new ArrayList<MenuInput>();
@@ -113,8 +116,6 @@ public class Menu {
 			}else{
 				System.out.println("No menu selection by that command exists");
 			}
-			
 		}
 	}
-	
 }
