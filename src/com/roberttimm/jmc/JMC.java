@@ -9,34 +9,34 @@ import java.util.Scanner;
 /**
  * This class allows you to easily create a menu system
  */
-public class Menu {
+public class JMC {
 
 	/**
 	 * The top level elements of this menu
 	 */
-	private MenuEntryContainer topLevel;
+	private JMCEntryContainer topLevel;
 	
 	/**
 	 * The current menu level the user is on
 	 */
-	private MenuEntryContainer traversal;
+	private JMCEntryContainer traversal;
 	
 	/**
 	 * Used for storing data processed by end points at MenuCommand
 	 */
-	private MenuMemory memory;
+	private JMCMemory memory;
 	
-	public Menu(String homeLabel){
-		topLevel = new MenuEntryContainer(homeLabel, true);
+	public JMC(String homeLabel){
+		topLevel = new JMCEntryContainer(homeLabel, true);
 		traversal = topLevel;
-		memory = new MenuMemory();
+		memory = new JMCMemory();
 	}
 	
 	/**
 	 * Add a new menu entry to the top level menu
 	 * @param entry MenuEntry
 	 */
-	public void addTopLevelEntry(MenuEntry entry){
+	public void addTopLevelEntry(JMCEntry entry){
 		topLevel.addEntry(entry);
 	}
 	
@@ -84,13 +84,13 @@ public class Menu {
 			}
 			
 			// get the selector the user requested
-			MenuEntry me = traversal.getBySelector(selection);
+			JMCEntry me = traversal.getBySelector(selection);
 			
 			// get some user inputs if there is an executable element
 			//  attached to this menu item
 			if(me != null){
 				if(me.isExecutable()){
-					ArrayList<MenuInput> inputs = new ArrayList<MenuInput>();
+					ArrayList<JMCInput> inputs = new ArrayList<JMCInput>();
 					if(me.requiresInputs()){
 						for(String instruction : me.getInputInstructions()){
 							System.out.println(instruction);
@@ -99,7 +99,7 @@ public class Menu {
 								BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 								String input;
 								while((input=br.readLine())!=null){
-									inputs.add(new MenuInput(input));
+									inputs.add(new JMCInput(input));
 									break;
 								}
 							}catch(IOException io){

@@ -2,7 +2,7 @@ package com.roberttimm.jmc;
 import java.util.ArrayList;
 
 
-public interface MenuCommand {
+public interface JMCCommand {
 
 	/**
 	 * Execute a defined enpoint function
@@ -10,6 +10,6 @@ public interface MenuCommand {
 	 * @param memory MenuMenory - persistant memory for accessing/storing info
 	 * @return String - something to report back to the user
 	 */
-	public String execute(ArrayList<MenuInput> input, MenuMemory memory);
+	public String execute(ArrayList<JMCInput> input, JMCMemory memory);
 	
 }

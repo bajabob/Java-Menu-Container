@@ -2,11 +2,11 @@ package com.roberttimm.jmc;
 import java.math.BigInteger;
 
 
-public class MenuInput {
+public class JMCInput {
 
 	private String input;
 	
-	public MenuInput(String input){
+	public JMCInput(String input){
 		this.input = input;
 	}
 	

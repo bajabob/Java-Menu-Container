@@ -2,24 +2,24 @@ package com.roberttimm.jmc;
 import java.util.ArrayList;
 
 
-public class MenuEntryContainer {
+public class JMCEntryContainer {
 
 	/** the label for this container */
 	private String label;
 	
 	/** the list of entries for this container */
-	private ArrayList<MenuEntry> entries;
+	private ArrayList<JMCEntry> entries;
 	
 	/** is this the home container? */
 	private boolean isHome;
 	
-	public MenuEntryContainer(String label, boolean isHome){
+	public JMCEntryContainer(String label, boolean isHome){
 		this.label = label;
 		this.isHome = isHome;
-		entries = new ArrayList<MenuEntry>();
+		entries = new ArrayList<JMCEntry>();
 	}
 	
-	public MenuEntryContainer(String label){
+	public JMCEntryContainer(String label){
 		this(label, false);
 	}
 	
@@ -28,8 +28,8 @@ public class MenuEntryContainer {
 	 * @param selector MenuEntry
 	 * @return null | MenuEntry
 	 */
-	public MenuEntry getBySelector(String selector){
-		for(MenuEntry me : entries){
+	public JMCEntry getBySelector(String selector){
+		for(JMCEntry me : entries){
 			if(me.hasSelector(selector)){
 				return me;
 			}
@@ -40,8 +40,8 @@ public class MenuEntryContainer {
 	 * Add an entry to this container
 	 * @param me MenuEntry
 	 */
-	public void addEntry(MenuEntry me){
-		for(MenuEntry e : entries){
+	public void addEntry(JMCEntry me){
+		for(JMCEntry e : entries){
 			if(e.hasSelector(me.getSelector())){
 				System.err.println("Selector '"+me.getSelector()+"' is already being used by this container.");
 				return;
@@ -52,7 +52,7 @@ public class MenuEntryContainer {
 	
 	public String toString(){
 		String s = this.label + "\n";
-		for(MenuEntry me : entries){
+		for(JMCEntry me : entries){
 			s += me + "\n";
 		}
 		s += "\n";

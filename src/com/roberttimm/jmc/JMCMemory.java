@@ -5,14 +5,14 @@ import java.util.Map;
 import java.util.Set;
 
 
-public class MenuMemory {
+public class JMCMemory {
 
 	/**
 	 * all the data
 	 */
 	private Map<String, String> memory;
 
-	public MenuMemory(){
+	public JMCMemory(){
 		memory = new HashMap<String, String>();
 	}
 	

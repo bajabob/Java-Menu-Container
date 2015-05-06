@@ -2,7 +2,7 @@ package com.roberttimm.jmc;
 import java.util.ArrayList;
 
 
-public class MenuEntry {
+public class JMCEntry {
 	
 	/** the label for this entry (shown on the menu) */
 	private String label;
@@ -14,17 +14,17 @@ public class MenuEntry {
 	private String selector;
 	
 	/** the menu command to call when the user is done entering information */
-	private MenuCommand command;
+	private JMCCommand command;
 	
 	/** a container that is a sub-menu to this entry (for creating hierarchies) */
-	private MenuEntryContainer entries;
+	private JMCEntryContainer entries;
 		
-	public MenuEntry(String label, String selector, MenuCommand command){
+	public JMCEntry(String label, String selector, JMCCommand command){
 		this.label = label;
 		this.selector = selector.toLowerCase().trim();
 		this.command = command;
 		this.inputInstructions = new ArrayList<String>();
-		this.entries = new MenuEntryContainer(label);
+		this.entries = new JMCEntryContainer(label);
 		
 		if(this.selector.equals("q")){
 			System.err.println("'q' is a reserved menu selector. Please choose another.");
@@ -44,7 +44,7 @@ public class MenuEntry {
 	}
 	
 	
-	public MenuEntry(String labal, String selector){
+	public JMCEntry(String labal, String selector){
 		this(labal, selector, null);
 	}
 	
@@ -78,7 +78,7 @@ public class MenuEntry {
 	 * Get the sub-menu to this entry
 	 * @return MenuEntryContainer
 	 */
-	public MenuEntryContainer getMenuEntryContainer(){
+	public JMCEntryContainer getMenuEntryContainer(){
 		return this.entries;
 	}
 	
@@ -86,7 +86,7 @@ public class MenuEntry {
 	 * Add an entry to this sub menu
 	 * @param me MenuEntry
 	 */
-	public void addEntry(MenuEntry me){
+	public void addEntry(JMCEntry me){
 		entries.addEntry(me);
 	}
 	
@@ -122,7 +122,7 @@ public class MenuEntry {
 	 * @param memory MenuMemory
 	 * @return String - a response to show the user
 	 */
-	public String execute(ArrayList<MenuInput> inputs, MenuMemory memory){
+	public String execute(ArrayList<JMCInput> inputs, JMCMemory memory){
 		return command.execute(inputs, memory);
 	}
 	
